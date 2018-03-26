@@ -95,7 +95,7 @@ export default class Main extends Component {
     updateData = async () => {
         try {
             let ListOfTasks = await AsyncStorage.getItem('ListOfTasks');
-            this.setState({ noteArray: JSON.parse(ListOfTasks) });
+          if(ListOfTasks)  this.setState({ noteArray: JSON.parse(ListOfTasks) });
         } catch(error){
             alert(error);
         }
